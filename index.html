@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>班级分组</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+
+  <!-- 弹层 -->
+  <div class="dialog">
+    <header>
+      <h3>新建班级</h3>
+      <a class="closebtn">&times;</a>
+    </header>
+    <dl>
+      <dt>班级名称</dt>
+      <dd><input name="name" type="text" class="input small"></dd>
+      <dt>团队成员</dt>
+      <dd><input name="team" type="text" class="input small"></dd>
+      <dt class="row">班级分组</dt>
+      <dd><input name="total" id="groupTotal" type="number" class="input small" placeholder="分几组？"></dd>
+      <dt class="row">分组信息</dt>
+      <dd id="groupInfo" class="info"></dd>
+    </dl>
+    <footer>
+      <button type="submit" class="btn">确定</button>
+      <button class="btn cancelbtn">取消</button>
+    </footer>
+  </div>
+
+  <!-- 右键菜单 -->
+  <ul class="rightmenu">
+    <li>
+      <label>显示状态：</label>
+      <select name="show">
+        <option value="visible">正常</option>
+        <option value="hidden">透明</option>
+        <option value="remove">移除</option>
+      </select>
+    </li>
+    <ul>
+      <li>
+        <label>修改姓名：</label>
+        <input type="text" name="name">
+      </li>
+      <li>
+        <label>上传头像：</label>
+        <label class="uploadbtn" title="单击上传图片">
+          <input type="file" accept="image/*" hidden>
+          <img name="avatar" src="img/avatar.png" width="70" height="70">
+        </label>
+      </li>
+      <li>
+        <label>所属分组：</label>
+        <input type="color" name="bgcolor">
+      </li>
+      <li>
+        <label>设置组长：</label>
+        <select name="team">
+          <option value="">请选择</option>
+          <option value="yes">是</option>
+          <option value="no">否</option>
+        </select>
+      </li>
+    </ul>
+    <li>
+      <button type="submit">确定</button>
+    </li>
+  </ul>
+
+  <div class="app">
+
+    <div class="main"></div>
+
+    <div class="rostrum">
+      <svg></svg>
+      <a class="btn addbtn">新建</a>
+      <label class="btn exportbtn">
+        导入<input type="file" accept="text/plain">
+      </label>
+      <a class="btn importbtn">导出</a>
+      <a id="downloadbtn" hidden></a>
+    </div>
+    
+  </div>
+
+</body>
+</html>
